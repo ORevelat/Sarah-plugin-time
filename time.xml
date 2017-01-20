@@ -1,0 +1,24 @@
+<grammar version="1.0" xml:lang="fr-FR" mode="voice" root="ruleTIME" xmlns="http://www.w3.org/2001/06/grammar" tag-format="semantics/1.0">
+
+	<rule id="ruleTIME" scope="public">
+    	<tag>out.action=new Object();</tag>
+
+	    <item>Sarah s'il te plait</item>
+
+		<item>
+			<ruleref uri="#TIME" />
+			<tag>out.action.mode = "TIME";</tag>
+		</item>
+
+	    <tag>out.action._attributes.uri="http://127.0.0.1:8080/sarah/time";</tag>
+	</rule>
+
+	<rule id="TIME" scope="public">
+	    <one-of>
+	      <item>il est quelle heure</item>
+	      <item>quelle heure est-t'il</item>
+	      <item>donne moi l'heure</item>
+	    </one-of>
+	</rule>
+
+</grammar>
