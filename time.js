@@ -23,6 +23,7 @@ var commandError = function(next) {
 		toSpeak = availableTTS[choice];
 	}
 
+	console.log('command error');
 	next({'tts': toSpeak});
 };
 
