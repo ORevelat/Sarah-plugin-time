@@ -6,19 +6,23 @@
 	    <item>Sarah s'il te plait</item>
 
 		<item>
-			<ruleref uri="#TIME" />
-			<tag>out.action.mode = "TIME";</tag>
+			<ruleref uri="#TIME_TIME" />
+			<tag>out.action.mode = "TIME"; out.action.cmd = rules.TIME_TIME.cmd;</tag>
 		</item>
 
 	    <tag>out.action._attributes.uri="http://127.0.0.1:8080/sarah/time";</tag>
 	</rule>
 
-	<rule id="TIME" scope="public">
+	<rule id="TIME_TIME" scope="public">
 	    <one-of>
-	      <item>il est quelle heure</item>
-	      <item>quelle heure est-t'il</item>
-	      <item>donne moi l'heure</item>
+			<item>il est quelle heure<tag>out.cmd="time";</tag></item>
+			<item>quelle heure est il<tag>out.cmd="time";</tag></item>
+			<item>quel jour sommes-nous<tag>out.cmd="date";</tag></item>
+			<item>quelle date sommes-nous<tag>out.cmd="date";</tag></item>
+	    	<item>qu'elle semaine sommes nous<tag>out.cmd="week_today";</tag></item>
+	    	<item>nous sommes en qu'elle semaine<tag>out.cmd="week_today";</tag></item>
+	    	<item>demain qu'elle semaine serons nous <tag>out.cmd="week_tomorrow";</tag></item>
+	    	<item>demain nous serons en qu'elle semaine <tag>out.cmd="week_tomorrow";</tag></item>
 	    </one-of>
 	</rule>
-
 </grammar>
